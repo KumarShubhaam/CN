@@ -1,0 +1,69 @@
+
+from sys import stdin
+
+
+def highestOccuringChar(string) :
+	#Your code goes here
+	    #Your code goes here
+    freq = [0] * 256    #frequency array
+    max_value = 0
+    c = ''
+    for char in string:          #LOOP TO COUNT THE FREQUENCY
+        index = ord(char)
+        freq[index] = freq[index] + 1
+    # print(freq)
+    for i in range(len(freq)):    #LOOP TO COUNT MAX_VALUE
+        if freq[i] > max_value:
+            max_value = freq[i]
+            
+    # print(max_value)
+    for char in string:          #LOOP TO IDENTIFY FIRST OCURING CHAR IN STRING
+        index = ord(char)
+        if freq[index] == max_value:
+            c = chr(index)
+            break
+
+    return c
+       
+        
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	
+
+
+
+#main
+string = stdin.readline().strip();
+ans = highestOccuringChar(string)
+
+print(ans)
